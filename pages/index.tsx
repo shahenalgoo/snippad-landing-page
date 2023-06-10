@@ -1,118 +1,125 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import Button from "@/components/ui/Button";
+import Container from "@/components/ui/Container";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 
-const inter = Inter({ subsets: ['latin'] })
+import { TbApps, TbArrowRight, TbBook, TbBrandGithub, TbCloud, TbCloudDownload } from "react-icons/tb";
+import { SiAppwrite } from "react-icons/si";
+
+import GitHubButton from 'react-github-btn'
 
 export default function Home() {
-  return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+	return (
+		<>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+			<Head>
+				<title>Snippad - Open-Source</title>
+			</Head>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+			<div className="relative">
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+				<div className="absolute top-0 left-0 w-full flex justify-center">
+					<div className="gradient-blue absolute -top-10">&nbsp;</div>
+					<div className="gradient-green">&nbsp;</div>
+				</div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
+				<Container>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+					<div className="mt-12 mb-14 sm:flex justify-between items-center">
+						<figure className="w-[152px]">
+							<Image src="/logo.png" width={304} height={80} alt="Snippad" className="w-auto h-auto" />
+						</figure>
+
+						<div className="mt-4 sm:mt-0">
+							<GitHubButton href="https://github.com/shahenalgoo/snippad" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star shahenalgoo/snippad on GitHub">Star</GitHubButton>
+							&nbsp;&nbsp;&nbsp;
+							<GitHubButton href="https://github.com/shahenalgoo" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Follow @shahenalgoo on GitHub">Follow</GitHubButton>
+						</div>
+					</div>
+
+
+					{/* Tagline - Mobile */}
+					<div className="sm:hidden mb-2 flex items-center">
+						<span className="text-xl mr-3">Open-Source</span>
+						<Button href="https://appwrite.io/" target="_blank" variant='black' size='sm' rounded='full' className="text-sm mr-1 text-[#F02E65]">
+							Built with <SiAppwrite size={18} className="mx-1" /> Appwrite
+						</Button>
+					</div>
+					<h1 className="sm:hidden mb-2 uppercase text-4xl font-bold">
+						Code Snippet & <br />
+						note-taking app <br />
+						for developers
+					</h1>
+
+
+					{/* Tagline - SM+ */}
+					<h1 className="hidden sm:block sm:text-center uppercase sm:mt-32 mb-10">
+						<div className="mb-4 flex justify-center items-center">
+							<span className="text-2xl mr-3">Open-Source</span>
+							<Button href="https://appwrite.io/" target="_blank" variant='black' size='sm' rounded='full' className="text-sm mr-1 text-[#F02E65]">
+								Built with <SiAppwrite size={18} className="mx-1" /> Appwrite
+							</Button>
+						</div>
+						<span className="block text-xl font-bold sm:text-4xl lg:text-6xl lg:mb-2">Code snippet & note-taking</span>
+						<span className="block text-xl font-bold sm:text-4xl lg:text-6xl">app for developers</span>
+					</h1>
+
+
+					{/* CTA - Mobile */}
+					<div className="sm:hidden flex items-center gap-2 mt-10 mb-8">
+						<Button href="https://github.com/shahenalgoo/snippad/wiki" target="_blank" rounded='full' variant='gray'>
+							<TbBrandGithub size={24} strokeWidth={1} className="mr-2" />
+							Read Docs
+						</Button>
+
+						<Button href="https://cloud.snippad.io" target="_blank" rounded='full'>
+							<TbCloud size={24} className="mr-2" />
+							<span className="font-bold">Go to App</span>
+						</Button>
+					</div>
+
+
+					{/* CTA - SM+ */}
+					<div className="hidden lg:hidden sm:flex justify-center items-center gap-2 mt-10 mb-8">
+						<Button href="https://github.com/shahenalgoo/snippad/wiki" target="_blank" rounded='full' size='lg' variant='gray'>
+							<TbBrandGithub size={24} strokeWidth={1} className="mr-2" />
+							Read Docs
+						</Button>
+
+						<Button href="https://cloud.snippad.io" target="_blank" rounded='full' size='lg'>
+							<TbCloud size={24} className="mr-2" />
+							<span className="font-bold">Go to App</span>
+						</Button>
+					</div>
+
+
+					{/* CTA - LG+ */}
+					<div className="hidden lg:flex justify-center items-center gap-4 mb-44">
+						<Button href="https://github.com/shahenalgoo/snippad/wiki" target="_blank" rounded='full' size='lg' variant='gray'>
+							<TbBrandGithub size={24} strokeWidth={1} className="mr-2" />
+							Read Docs
+						</Button>
+
+						<Button rounded='full' size='lg' variant='gray'>
+							<TbCloudDownload size={24} className="mr-2 mb-1" />
+							Desktop App
+						</Button>
+
+						<Button href="https://cloud.snippad.io" target="_blank" rounded='full' size='lg'>
+							<TbCloud size={24} className="mr-2" />
+							<span className="font-bold">Go to App</span>
+						</Button>
+					</div>
+
+
+					{/* App Preview */}
+					<figure className="flex justify-center">
+						<Image src="/app.jpg" width={1152} height={710} alt="Snippad" className="w-auto h-auto rounded-xl" />
+					</figure>
+
+				</Container>
+			</div>
+		</>
+	)
 }
