@@ -1,4 +1,5 @@
 import { FC } from "react";
+import Footer from "../Footer";
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -6,9 +7,12 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
     return (
-        <main className=" overflow-x-hidden">
-            {children}
-        </main>
+        <>
+            <main>
+                {children}
+            </main>
+            <Footer />
+        </>
     );
 }
 

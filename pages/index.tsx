@@ -8,6 +8,7 @@ import { TbApps, TbArrowRight, TbBook, TbBrandGithub, TbCloud, TbCloudDownload }
 import { SiAppwrite } from "react-icons/si";
 
 import GitHubButton from 'react-github-btn'
+import ProductSlider from "@/components/ProductSlider";
 
 export default function Home() {
 	return (
@@ -19,7 +20,7 @@ export default function Home() {
 
 			<div className="relative">
 
-				<div className="absolute top-0 left-0 w-full flex justify-center">
+				<div className="overflow-hidden absolute top-0 left-0 w-full flex justify-center">
 					<div className="gradient-blue absolute -top-10">&nbsp;</div>
 					<div className="gradient-green">&nbsp;</div>
 				</div>
@@ -48,7 +49,7 @@ export default function Home() {
 					</div>
 					<h1 className="sm:hidden mb-2 uppercase text-4xl font-bold">
 						Code Snippet & <br />
-						note-taking app <br />
+						notebook app <br />
 						for developers
 					</h1>
 
@@ -61,14 +62,14 @@ export default function Home() {
 								Built with <SiAppwrite size={18} className="mx-1" /> Appwrite
 							</Button>
 						</div>
-						<span className="block text-xl font-bold sm:text-4xl lg:text-6xl lg:mb-2">Code snippet & note-taking</span>
+						<span className="block text-xl font-bold sm:text-4xl lg:text-6xl lg:mb-2">Code snippet & notebook</span>
 						<span className="block text-xl font-bold sm:text-4xl lg:text-6xl">app for developers</span>
 					</h1>
 
 
 					{/* CTA - Mobile */}
 					<div className="sm:hidden flex items-center gap-2 mt-10 mb-8">
-						<Button href="https://github.com/shahenalgoo/snippad/wiki" target="_blank" rounded='full' variant='gray'>
+						<Button href="https://github.com/shahenalgoo/snippad#snippad-intro" target="_blank" rounded='full' variant='gray'>
 							<TbBrandGithub size={24} strokeWidth={1} className="mr-2" />
 							Read Docs
 						</Button>
@@ -80,9 +81,9 @@ export default function Home() {
 					</div>
 
 
-					{/* CTA - SM+ */}
-					<div className="hidden lg:hidden sm:flex justify-center items-center gap-2 mt-10 mb-8">
-						<Button href="https://github.com/shahenalgoo/snippad/wiki" target="_blank" rounded='full' size='lg' variant='gray'>
+					{/* CTA */}
+					<div className="hidden sm:flex justify-center items-center gap-2 lg:gap-4 mt-10 mb-8 lg:mb-20">
+						<Button href="https://github.com/shahenalgoo/snippad#snippad-intro" target="_blank" rounded='full' size='lg' variant='gray'>
 							<TbBrandGithub size={24} strokeWidth={1} className="mr-2" />
 							Read Docs
 						</Button>
@@ -92,33 +93,13 @@ export default function Home() {
 							<span className="font-bold">Go to App</span>
 						</Button>
 					</div>
-
-
-					{/* CTA - LG+ */}
-					<div className="hidden lg:flex justify-center items-center gap-4 mb-44">
-						<Button href="https://github.com/shahenalgoo/snippad/wiki" target="_blank" rounded='full' size='lg' variant='gray'>
-							<TbBrandGithub size={24} strokeWidth={1} className="mr-2" />
-							Read Docs
-						</Button>
-
-						<Button rounded='full' size='lg' variant='gray'>
-							<TbCloudDownload size={24} className="mr-2 mb-1" />
-							Desktop App
-						</Button>
-
-						<Button href="https://cloud.snippad.io" target="_blank" rounded='full' size='lg'>
-							<TbCloud size={24} className="mr-2" />
-							<span className="font-bold">Go to App</span>
-						</Button>
-					</div>
-
-
-					{/* App Preview */}
-					<figure className="flex justify-center">
-						<Image src="/app.jpg" width={1152} height={710} alt="Snippad" className="w-auto h-auto rounded-xl" />
-					</figure>
-
 				</Container>
+
+				<ProductSlider />
+				{/* 
+				<Container>
+					Test
+				</Container> */}
 			</div>
 		</>
 	)
